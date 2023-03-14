@@ -28,7 +28,7 @@ namespace tpi_website.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Second()
         {
             return View();
         }
