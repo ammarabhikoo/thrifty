@@ -18,6 +18,16 @@ namespace tpi_website.Controllers
             return View();
         }
 
+        public IActionResult Sustainably()
+        {
+            return View();
+        }
+
+        public IActionResult Donate()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
