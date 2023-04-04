@@ -2,24 +2,39 @@
     ViewData["Title"] = "Home Page";
 }
 
-<head>
-    <img src="~/lib/photos/shop ethically today (1).png" class="banner" alt="banner" style="width:100%" />
-</head>
+<!-- Slideshow container -->
+<div class="slideshow-container">
 
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="~/lib/photos/shop ethically today (1).png" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
 
-<body> 
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="~/lib/photos/untitled design.png" style="width:100%">
+        <div class="text">Shop Our Range Now</div>
+    </div>
 
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="~/lib/photos/untitled design (1).png" style="width:100%">
+        <div class="text">Donate Today</div>
+    </div>
 
-    <div class="row">
-        <div class="column">
-            <img src="~/lib/photos/model 3 index.png" alt="model 3" style="width:300px">
-        </div>
-        <div class="column">
-            <img src="~/lib/photos/clothes hanging 2.png" alt="clothes" style="width:300px">
-        </div>
-        <div class="column">
-            <img src="~/lib/photos/model pink 2.png" alt="model in pink" style="width:300px">
-        </div>
-</body>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
 
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
+    
