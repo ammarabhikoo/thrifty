@@ -38,6 +38,11 @@ namespace tpi_website.Controllers
             return View();
         }
 
+        public IActionResult Bag()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
