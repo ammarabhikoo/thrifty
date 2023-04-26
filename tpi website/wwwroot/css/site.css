@@ -40,7 +40,7 @@ input[type=text], input[type=submit] {
 
 /* Add margins to the checkbox */
 input[type=checkbox] {
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 /* Style the submit button */
@@ -142,6 +142,7 @@ select:focus {
     color: black;
 }
 
+/* login page*/
 *, *:before, *:after {
     box-sizing: border-box;
 }
