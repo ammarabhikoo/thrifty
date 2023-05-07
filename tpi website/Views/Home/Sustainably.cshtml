@@ -1,7 +1,315 @@
 ﻿
-@{
-    ViewData["Title"] = "Shop Sustainably";
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<h1>Sustainably</h1>
+<h1>@ViewData["Title"]</h1>
+
+<div class="small-container">
+
+    <div class="row row-2">
+        <h2>All Sustainably Made Products</h2>
+        <select>
+            <option>Default Sorting</option>
+            <option>Sort by Price Low to High</option>
+            <option>Sort by Price High to Low</option>
+            <option>Sort by Popularity</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (4).png" />
+            <h4>Dark Blue Wash Denim Shorts</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$70.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (3).png" />
+            <h4>Lilac Corset Top</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$40</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (8).png" />
+            <h4>Black Mini Skirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$45.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (6).png" />
+            <h4>Pink Silk Midi Dress</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$60.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (9).png" />
+            <h4>Black Ribbed Tank</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$25.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (7).png" />
+            <h4>White Mini Skirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$45.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (2).png" />
+            <h4>Black Leather Coat</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$130.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (11).png" />
+            <h4>Grey Tank</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$25.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (5).png" />
+            <h4>Lightwash Ripped Denim Shorts</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (10).png" />
+            <h4>Brown Knit Sweater</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$60.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (14).png" />
+            <h4>Denim Mini Skirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$40.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/sustainability/untitled design (13).png" />
+            <h4>Lightwash Straight leg jeans</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$5.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/sh-puffer.png" />
+            <h4>Black Puffer Jacket</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$30.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/sh-heels.png" />
+            <h4>Black Slip-On Heels</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$30.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/dark blue jeans.png" />
+            <h4>Dark Blue Wide Leg Jeans</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$30.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/loafers.png" />
+            <h4>Black Loafers</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$20.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/jacket.png" />
+            <h4>Black Teddy Jacket</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$50.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/glassons sweater.png" />
+            <h4>Sweater</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$30.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/light blue jeans.png" />
+            <h4>Light Blue Jeans</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$20.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/white top.png" />
+            <h4>White Tee</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p>$7.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/sh-shoes.png" />
+            <h4>New Balance Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$90.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/green top.png" />
+            <h4>Long Sleeve Green Top</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$10.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/sh-cap.png" />
+            <h4>Black Cap</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$10.00</p>
+        </div>
+        <div class="col-4">
+            <img src="~/lib/photos/second hand photos/black top.png" />
+            <h4>Black Graphic Tee</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+            </div>
+            <p>$5.00</p>
+        </div>
+
+    </div>
+
+
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+    </div>
+</div>
 
