@@ -1,18 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
-namespace tpi_website.Controllers
-{
+namespace tpi_website.Controllers;
+
     public class ThriftyController : Controller
     {
-        public string Index()
-        {
-            return "This is my default action...";
-        }
-        public string Welcome()
+    // 
+    // GET: /Thrifty/
+    public IActionResult Index()
+    {
+        return View();
+    }
+    // 
+    // GET: /Thrifty/Welcome/ 
+    public string Welcome()
         {
             return "This is the Welcome action method...";
         }
     }
-}
+
 

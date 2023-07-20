@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using tpi_website.Areas.Identity.Data;
+using tpi_website.Models;
 
 namespace tpi_website.Data;
 
@@ -19,4 +20,6 @@ public class tpi_websiteContext : IdentityDbContext<tpi_websiteUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+    public DbSet<tpi_website.Models.Thrifty>? Thrifty { get; set; }
 }
