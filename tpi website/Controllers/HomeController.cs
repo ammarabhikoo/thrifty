@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using tpi_website.Models;
 
 namespace tpi_website.Controllers
 {
+   
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,10 +20,13 @@ namespace tpi_website.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Sustainably()
         {
             return View();
         }
+        
 
         public IActionResult Donate()
         {
