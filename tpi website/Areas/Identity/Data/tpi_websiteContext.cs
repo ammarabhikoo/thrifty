@@ -22,4 +22,12 @@ public class tpi_websiteContext : IdentityDbContext<tpi_websiteUser>
     }
 
     public DbSet<tpi_website.Models.Thrifty>? Thrifty { get; set; }
+
+    public DbSet<tpi_website.Models.Order>? Order { get; set; }
+
+    public DbSet<tpi_website.Models.Products>? Products { get; set; }
+
+    public DbSet<tpi_website.Models.Payment>? Payment { get; set; }
+
+    public DbSet<tpi_website.Models.Customers>? Customers { get; set; }
 }

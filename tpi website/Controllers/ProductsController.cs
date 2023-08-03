@@ -8,89 +8,89 @@ using Microsoft.EntityFrameworkCore;
 using tpi_website.Data;
 using tpi_website.Models;
 
-namespace tpi_website
+namespace tpi_website.Controllers
 {
-    public class sproductsController : Controller
+    public class ProductsController : Controller
     {
         private readonly tpi_websiteContext _context;
 
-        public sproductsController(tpi_websiteContext context)
+        public ProductsController(tpi_websiteContext context)
         {
             _context = context;
         }
 
-        // GET: sproducts
+        // GET: Products
         public async Task<IActionResult> Index()
         {
-              return _context.Thrifty != null ? 
-                          View(await _context.Thrifty.ToListAsync()) :
-                          Problem("Entity set 'tpi_websiteContext.Thrifty'  is null.");
+              return _context.Products != null ? 
+                          View(await _context.Products.ToListAsync()) :
+                          Problem("Entity set 'tpi_websiteContext.Products'  is null.");
         }
 
-        // GET: sproducts/Details/5
+        // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Thrifty == null)
+            if (id == null || _context.Products == null)
             {
                 return NotFound();
             }
 
-            var thrifty = await _context.Thrifty
+            var products = await _context.Products
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (thrifty == null)
+            if (products == null)
             {
                 return NotFound();
             }
 
-            return View(thrifty);
+            return View(products);
         }
 
-        // GET: sproducts/Create
+        // GET: Products/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: sproducts/Create
+        // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Price")] Thrifty thrifty)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductType,Quantity")] Products products)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(thrifty);
+                _context.Add(products);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(thrifty);
+            return View(products);
         }
 
-        // GET: sproducts/Edit/5
+        // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Thrifty == null)
+            if (id == null || _context.Products == null)
             {
                 return NotFound();
             }
 
-            var thrifty = await _context.Thrifty.FindAsync(id);
-            if (thrifty == null)
+            var products = await _context.Products.FindAsync(id);
+            if (products == null)
             {
                 return NotFound();
             }
-            return View(thrifty);
+            return View(products);
         }
 
-        // POST: sproducts/Edit/5
+        // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Price")] Thrifty thrifty)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductType,Quantity")] Products products)
         {
-            if (id != thrifty.Id)
+            if (id != products.Id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace tpi_website
             {
                 try
                 {
-                    _context.Update(thrifty);
+                    _context.Update(products);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ThriftyExists(thrifty.Id))
+                    if (!ProductsExists(products.Id))
                     {
                         return NotFound();
                     }
@@ -115,49 +115,49 @@ namespace tpi_website
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(thrifty);
+            return View(products);
         }
 
-        // GET: sproducts/Delete/5
+        // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Thrifty == null)
+            if (id == null || _context.Products == null)
             {
                 return NotFound();
             }
 
-            var thrifty = await _context.Thrifty
+            var products = await _context.Products
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (thrifty == null)
+            if (products == null)
             {
                 return NotFound();
             }
 
-            return View(thrifty);
+            return View(products);
         }
 
-        // POST: sproducts/Delete/5
+        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Thrifty == null)
+            if (_context.Products == null)
             {
-                return Problem("Entity set 'tpi_websiteContext.Thrifty'  is null.");
+                return Problem("Entity set 'tpi_websiteContext.Products'  is null.");
             }
-            var thrifty = await _context.Thrifty.FindAsync(id);
-            if (thrifty != null)
+            var products = await _context.Products.FindAsync(id);
+            if (products != null)
             {
-                _context.Thrifty.Remove(thrifty);
+                _context.Products.Remove(products);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ThriftyExists(int id)
+        private bool ProductsExists(int id)
         {
-          return (_context.Thrifty?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
