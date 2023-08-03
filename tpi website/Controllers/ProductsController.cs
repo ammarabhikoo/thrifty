@@ -56,7 +56,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductType,Quantity")] Products products)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductType,Price,Quantity")] Products products)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductType,Quantity")] Products products)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductType,Price,Quantity")] Products products)
         {
             if (id != products.Id)
             {
