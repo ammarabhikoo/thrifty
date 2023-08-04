@@ -8,3 +8,5 @@ public class Thrifty
    
     public decimal Price { get; set; }
 }
+
+;
