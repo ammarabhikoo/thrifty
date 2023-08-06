@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +12,7 @@ using tpi_website.Models;
 
 namespace tpi_website.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class OrdersController : Controller
     {
         private readonly tpi_websiteContext _context;
@@ -56,7 +59,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Customer_ID,Ship_date,Customer_name,To_street,To_city,To_zip,Product_ID")] Order order)
+        public async Task<IActionResult> Create([Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +91,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Customer_ID,Ship_date,Customer_name,To_street,To_city,To_zip,Product_ID")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
         {
             if (id != order.Id)
             {

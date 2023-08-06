@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tpi_website.Data;
 
@@ -11,9 +12,10 @@ using tpi_website.Data;
 namespace tpi_website.Migrations
 {
     [DbContext(typeof(tpi_websiteContext))]
-    partial class tpi_websiteContextModelSnapshot : ModelSnapshot
+    [Migration("20230806041441_User")]
+    partial class User
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -270,14 +272,14 @@ namespace tpi_website.Migrations
                     b.Property<int>("Customer_ID")
                         .HasColumnType("int");
 
+                    b.Property<string>("Customer_name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Product_ID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Ship_date")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("To_city")
                         .HasColumnType("nvarchar(max)");

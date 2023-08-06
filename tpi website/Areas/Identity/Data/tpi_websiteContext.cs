@@ -29,5 +29,5 @@ public class tpi_websiteContext : IdentityDbContext<tpi_websiteUser>
 
     public DbSet<tpi_website.Models.Payment>? Payment { get; set; }
 
-    public DbSet<tpi_website.Models.Customers>? Customers { get; set; }
+    public DbSet<tpi_website.Models.User>? User { get; set; }
 }

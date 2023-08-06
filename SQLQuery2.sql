@@ -1,4 +1,3 @@
 ﻿ALTER TABLE [Order]
-ADD FOREIGN KEY (Product_ID)
-REFERENCES Products(Id);
-
+ADD FOREIGN KEY (Customer_ID)
+REFERENCES [User](Id);

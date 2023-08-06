@@ -1,10 +1,12 @@
-﻿@model IEnumerable<tpi_website.Models.Customers>
+﻿@model IEnumerable<tpi_website.Models.User>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+[Authorize(Roles = "Admin")]
+
+<h1>Customers</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -25,7 +27,7 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DOB)
+                @Html.DisplayNameFor(model => model.Age)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.City)
@@ -49,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DOB)
+                @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City)
