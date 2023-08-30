@@ -386,7 +386,7 @@ textarea {
 
 /* Style the back side */
 .flip-card-back {
-    background-color: #f9ebc1;
+    background-color: #cdb49a;
     color: black;
     transform: rotateY(180deg);
 }
@@ -429,7 +429,7 @@ bodyFAQ {
 .containerFAQ {
     margin: 0 auto;
     padding: 4rem;
-    width: 48rem;
+    width: 80rem;
 }
 
 .accordion .accordion-item {
@@ -464,7 +464,7 @@ bodyFAQ {
         .accordion button:focus::after {
             cursor: pointer;
             color: #03b5d2;
-            border: 1px solid #03b5d2;
+            border: 1px solid rgba(10, 13, 17, 0.3);
         }
 
     .accordion button .accordion-title {
@@ -475,7 +475,7 @@ bodyFAQ {
         display: inline-block;
         position: absolute;
         top: 18px;
-        right: 0;
+        right: 5px;
         width: 22px;
         height: 22px;
         border: 1px solid;
@@ -530,5 +530,5 @@ bodyFAQ {
     .accordion .accordion-content p {
         font-size: 1rem;
         font-weight: 300;
-        margin: 2em 0;
+        margin: 3em 0;
     }
