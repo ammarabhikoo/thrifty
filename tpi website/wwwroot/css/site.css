@@ -532,3 +532,7 @@ bodyFAQ {
         font-weight: 300;
         margin: 3em 0;
     }
+
+.hidden {
+    display: none;
+}

@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using tpi_website.Areas.Identity.Data
 
+
 @inject SignInManager<tpi_websiteUser> SignInManager
 @inject UserManager<tpi_websiteUser> UserManager
 
@@ -25,4 +26,7 @@ else
             <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login"><img src="~/lib/photos/login_fill1_wght200_grad0_opsz20.png" /></a>
     </li>
 }
+
+    
+
 </ul>
