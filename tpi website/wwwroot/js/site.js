@@ -51,28 +51,4 @@ function toggleAccordion() {
 }
 items.forEach((item) => item.addEventListener('click', toggleAccordion));
 
-// Simulate user authentication status and role
-const isAuthenticated = true; // Change this to false to see the hidden links
-const userRole = 'admin';     // Change this to 'user' to see the hidden links
 
-// Get references to the links
-const profileLink = document.getElementById('profile-link');
-const logoutLink = document.getElementById('logout-link');
-
-// Show/hide links based on authentication status and role
-if (isAuthenticated) {
-    profileLink.classList.remove('hidden');
-    logoutLink.classList.remove('hidden');
-
-    // Check if the user role is 'admin' to show additional admin-only links
-    if (userRole === 'admin') {
-        // Assuming you have elements with IDs 'admin-link-1' and 'admin-link-2'
-        const adminLink1 = document.getElementById('admin-link-1');
-        const adminLink2 = document.getElementById('admin-link-2');
-        adminLink1.classList.remove('hidden');
-        adminLink2.classList.remove('hidden');
-    }
-} else {
-    profileLink.classList.add('hidden');
-    logoutLink.classList.add('hidden');
-}
