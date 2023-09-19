@@ -22,6 +22,9 @@ namespace tpi_website.Controllers
             _context = context;
         }
 
+        
+
+
         // GET: Products
         public async Task<IActionResult> Index()
         {
@@ -160,7 +163,13 @@ namespace tpi_website.Controllers
 
         private bool ProductsExists(int id)
         {
-          return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
+            return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
+
+
+
+        }       
+     
+
     }
+
 }

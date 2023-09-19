@@ -21,7 +21,26 @@ namespace tpi_website.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> Index(string searchString)
+        {
+            if (_context.Users == null)
+            {
 
+                return _context.Users != null ?
+                    View(await _context.Users.ToListAsync()) :
+                    Problem("Entity set 'tpi_websiteContext.Users' is null.");
+            }
+
+            var users = from m in _context.Users
+                           select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(s => s.Email!.Contains(searchString));
+            }
+
+            return View(await users.ToListAsync());
+        }
         // GET: Users
         public async Task<IActionResult> Index()
         {
