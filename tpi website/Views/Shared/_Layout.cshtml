@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">thrifty</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -71,24 +71,52 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - tpi_website - <a asp-area="" asp-controller="Home" asp-action="privacy">Shipping and Returns</a>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="https://www.instagram.com/thriftyydesigns/" class="fa fa-instagram"></a>
-        </div>
-    </footer>
+    
+  <footer class="footer">
+  	 <div class="containerf">
+  	 	<div class="rowf">
+  	 		<div class="footer-col">
+  	 			<h4>Customer Care</h4>
+  	 			<ul>
+  	 				<li><a href="#">Returns and Exchanges</a></li>
+  	 				<li><a href="#">Shipping</a></li>
+  	 				<li><a href="#">Terms and Conditions</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>About Us</h4>
+  	 			<ul>
+  	 				<li><a href="#">Learn About Thrifty</a></li>
+  	 				<li><a href="#">How We Recycle</a></li>
+  	 				<li><a href="#">Our Mission</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Contact Us</h4>
+  	 			<ul>
+  	 				<li><a href="#">Email</a></li>
+  	 				<li><a href="#">Phone</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Follow Us</h4>
+  	 			<div class="social-links">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="https://www.instagram.com/thriftyydesigns/" class="fa fa-instagram"></a>
+  	 			</div>
+  	 		</div>
+                </div>
+  	 	</div>
+  </footer>
+
+     
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
-  
   
         <link rel="stylesheet" type="text/css" href="styles.css">
  
- 
-
 
 </body>
 </html>
