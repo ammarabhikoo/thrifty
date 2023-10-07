@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace tpi_website.Views.Home
+namespace tpi_website.wwwroot
 {
-    public class Index1Model : PageModel
+    public class IndexModel : PageModel
     {
         public void OnGet()
         {

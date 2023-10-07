@@ -38,22 +38,32 @@ namespace tpi_website.Controllers
             return View();
         }
 
-        public IActionResult Wishlist()
+        public IActionResult Learn()
         {
             return View();
         }
 
-        public IActionResult Bag()
+        public IActionResult Recycle()
         {
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Shipping()
         {
             return View();
         }
 
-        public IActionResult Product()
+        public IActionResult Conditions()
+        {
+            return View();
+        }
+
+        public IActionResult Returns()
+        {
+            return View();
+        }
+
+        public IActionResult Subscribe()
         {
             return View();
         }

@@ -39,18 +39,21 @@
 
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item1">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
-                        </li>
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item1">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                                </li>
 
-                            <li class="nav-item1">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">Order</a>
-                            </li>
+                                <li class="nav-item1">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index">Order</a>
+                                </li>
 
-                            <li class="nav-item1">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
-                        </li>
+                                <li class="nav-item1">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                                </li>
 
+                            }
                         }
                     </ul>
 
@@ -78,30 +81,30 @@
   	 		<div class="footer-col">
   	 			<h4>Customer Care</h4>
   	 			<ul>
-  	 				<li><a href="#">Returns and Exchanges</a></li>
-  	 				<li><a href="#">Shipping</a></li>
-  	 				<li><a href="#">Terms and Conditions</a></li>
+                        <li><a asp-controller="Home" asp-action="Returns">Returns and Exchanges</a></li>
+                        <li><a asp-controller="Home" asp-action="Shipping">Shipping</a></li>
+                        <li><a asp-controller="Home" asp-action="Conditions">Terms and Conditions</a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
   	 			<h4>About Us</h4>
   	 			<ul>
-  	 				<li><a href="#">Learn About Thrifty</a></li>
-  	 				<li><a href="#">How We Recycle</a></li>
-  	 				<li><a href="#">Our Mission</a></li>
+                        <li><a asp-controller ="Home" asp-action="Learn">Learn About Thrifty</a></li>
+                        <li><a asp-controller="Home" asp-action="Recycle">How We Recycle</a></li>
+  	 				
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
   	 			<h4>Contact Us</h4>
   	 			<ul>
-  	 				<li><a href="#">Email</a></li>
-  	 				<li><a href="#">Phone</a></li>
+  	 				<li><a href="mailto:thriftydesigns@gmail.com">Email</a></li>
+                        <li><a href="#tel:+098736965">Call 098736965</a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
   	 			<h4>Follow Us</h4>
   	 			<div class="social-links">
-                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="https://www.pinterest.nz/thriftyydesigns/" class="fa fa-pinterest"></a>
                         <a href="https://www.instagram.com/thriftyydesigns/" class="fa fa-instagram"></a>
   	 			</div>
   	 		</div>
