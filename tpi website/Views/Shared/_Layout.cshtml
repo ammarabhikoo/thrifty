@@ -13,7 +13,10 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">thrifty</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/lib/photos/td (5).png" width="55" height="55" alt="logo" />
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,15 +35,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Donate">Donate</a>
                         </li>
-                        <li class="nav-item1">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Wishlist"><img src="~/lib/photos/wishlist.png"/></a>
-                        </li>
-                        <li class="nav-item1">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Bag"><img src="~/lib/photos/shopping_cart_fill1_wght100_grad200_opsz24 (1).png"/></a>
-                        </li>
-                        <li class="nav-item1">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login"><img src="~/lib/photos/login_fill1_wght200_grad0_opsz20.png"/></a>
-                        </li>
+
 
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -59,8 +54,13 @@
                         }
                     </ul>
 
+                    
+                    
+
                     <script src="script.js"></script>
                     <partial name ="_LoginPartial" />
+
+
                 </div>
             </div>
         </nav>

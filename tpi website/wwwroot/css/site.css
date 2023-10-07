@@ -646,3 +646,19 @@ ul {
                 margin-right: 0; /* Remove the margin from the last column */
             }
     }
+
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    
+}
+
+
