@@ -14,8 +14,13 @@ namespace tpi_website.Models
 
         [Display(Name = "Product Category")]
         public string ProductType { get; set; }
-      
+
+
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be a positive number.")]
         public decimal Price { get; set; }
+
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "Quantity must be a positive whole number.")]
         public string Quantity { get; set; }
 
     }

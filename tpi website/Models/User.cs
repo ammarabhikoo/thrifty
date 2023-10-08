@@ -18,10 +18,13 @@ namespace tpi_website.Models
         public string LastName { get; set; }
 
         [Display(Name = "Phone Number")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Phone number must have exactly 10 digits.")]
         public int Phone { get; set; }
 
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$", ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = "Age must be a positive whole number.")]
         public int Age { get; set; }
 
         public string City { get; set; }

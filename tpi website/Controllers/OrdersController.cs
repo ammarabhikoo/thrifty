@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,10 +11,12 @@ using Microsoft.EntityFrameworkCore;
 using tpi_website.Data;
 using tpi_website.Models;
 
+
 namespace tpi_website.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class OrdersController : Controller
+
     {
         private readonly tpi_websiteContext _context;
 
@@ -22,8 +25,12 @@ namespace tpi_website.Controllers
             _context = context;
         }
 
-        // GET: Orders
-        public async Task<IActionResult> Index()
+       
+
+
+
+    // GET: Orders
+    public async Task<IActionResult> Index()
         {
               return _context.Order != null ? 
                           View(await _context.Order.ToListAsync()) :
