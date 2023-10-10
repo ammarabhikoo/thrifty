@@ -17,25 +17,75 @@
 
 
 <body>
+    <style>
+        .container {
+            text-align: left;
+            padding: 20px;
+        }
 
-<div class="container">
- <div class="row row-2">
-        <h2>All Sustainably Made Products</h2>
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .label-column {
+            flex: 1; /* Labels take up equal space */
+            text-align: left;
+        }
+
+        .select-column {
+            flex: 2; /* Selects take up more space */
+            text-align: right;
+        }
+
+        select {
+            width: 250px; 
+        }
+    </style>
+
+    <div class="container">
+        <div class="row row-2">
+            <h2>All Sustainably Made Products</h2>
         </div>
 
-        <div class="row row-2">
-        <select id="sorting-select">
-                <option value ="default">Default Sorting</option>
-            <option value="low-to-high">Sort by Price Low to High</option>
-            <option value="high-to-low">Sort by Price High to Low</option>
-                <option value ="popularity">Sort by Popularity</option>
-        </select>
+        <div class="row">
+            <div class="label-column">
+                <label for="sorting-select">Sort By:</label>
+            </div>
+            <div class="select-column">
+                <select id="sorting-select">
+                    <option value="default">Default</option>
+                    <option value="low-to-high">Price Low to High</option>
+                    <option value="high-to-low">Price High to Low</option>
+                    <option value="popularity">Popularity</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label-column">
+                <label for="product-filter">Filter by Product Type:</label>
+            </div>
+            <div class="select-column">
+                <select id="product-filter">
+                    <option value="all">All Products</option>
+                    <option value="tops">Tops</option>
+                    <option value="bottoms">Bottoms</option>
+                    <option value="skirt-dress">Skirts / Dresses</option>
+                    <option value="jackets">Jackets</option>
+                    <option value="knit">Knitwear / Sweats</option>
+                   
+                </select>
+            </div>
+        </div>
     </div>
-    </div>
+
+    <hr />
 
     <div class="small-container">
     <div class="row">
-        <div class="col-4" data-price="70.00" data-popularity="10">
+            <div class="col-4" data-price="70.00" data-popularity="10" data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (4).png" />
             <h4>Dark Blue Wash Denim Shorts</h4>
                 <a href="bag.html" class="cart-icon">
@@ -43,7 +93,7 @@
                 </a>
             <p>$70.00</p>
         </div>
-            <div class="col-4" data-price="40.00" data-popularity="7">
+            <div class="col-4" data-price="40.00" data-popularity="7" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (3).png" />
             <h4>Lilac Corset Top</h4>
             <div class="cart">
@@ -51,7 +101,7 @@
                 </div>
             <p>$40.00</p>
         </div>
-            <div class="col-4" data-price="45.00" data-popularity="8">
+            <div class="col-4" data-price="45.00" data-popularity="8" data-product-type="skirt-dress">
             <img src="~/lib/photos/sustainability/untitled design (8).png" />
             <h4>Black Mini Skirt</h4>
                 <a href="bag.html" class="cart-icon">
@@ -59,7 +109,7 @@
                 </a>
             <p>$45.00</p>
         </div>
-            <div class="col-4" data-price="60.00" data-popularity="4">
+            <div class="col-4" data-price="60.00" data-popularity="4" data-product-type="skirt-dress">
             <img src="~/lib/photos/sustainability/untitled design (6).png" />
             <h4>Pink Silk Midi Dress</h4>
                 <a href="bag.html" class="cart-icon">
@@ -67,7 +117,7 @@
                 </a>
             <p>$60.00</p>
         </div>
-            <div class="col-4" data-price="25.00" data-popularity="8">
+            <div class="col-4" data-price="25.00" data-popularity="8" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (9).png" />
             <h4>Black Ribbed Tank</h4>
                 <a href="bag.html" class="cart-icon">
@@ -75,7 +125,7 @@
                 </a>
             <p>$25.00</p>
         </div>
-            <div class="col-4" data-price="45.00" data-popularity="7">
+            <div class="col-4" data-price="45.00" data-popularity="7" data-product-type="skirt-dress">
             <img src="~/lib/photos/sustainability/untitled design (7).png" />
             <h4>White Mini Skirt</h4>
                 <a href="bag.html" class="cart-icon">
@@ -83,7 +133,7 @@
                 </a>
             <p>$45.00</p>
         </div>
-            <div class="col-4" data-price="130.00" data-popularity="1">
+            <div class="col-4" data-price="130.00" data-popularity="1" data-product-type="jackets">
                 
             <img src="~/lib/photos/sustainability/untitled design (2).png" />
             <h4>Black Leather Coat</h4>
@@ -92,7 +142,7 @@
                 </a>
             <p>$130.00</p>
         </div>
-            <div class="col-4" data-price="25.00" data-popularity="5">
+            <div class="col-4" data-price="25.00" data-popularity="5" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (11).png" />
             <h4>Grey Tank</h4>
                 <a href="bag.html" class="cart-icon">
@@ -100,7 +150,7 @@
                 </a>
             <p>$25.00</p>
         </div>
-            <div class="col-4" data-price="50.00" data-popularity="7">
+            <div class="col-4" data-price="50.00" data-popularity="7" data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (5).png" />
             <h4>Lightwash Ripped Denim Shorts</h4>
                 <a href="bag.html" class="cart-icon">
@@ -108,7 +158,7 @@
                 </a>
             <p>$50.00</p>
         </div>
-            <div class="col-4" data-price="60.00" data-popularity="7">
+            <div class="col-4" data-price="60.00" data-popularity="7"data-product-type="knit">
             <img src="~/lib/photos/sustainability/untitled design (10).png" />
             <h4>Brown Knit Sweater</h4>
                 <a href="bag.html" class="cart-icon">
@@ -116,7 +166,7 @@
                 </a>
             <p>$60.00</p>
         </div>
-            <div class="col-4" data-price="40.00" data-popularity="10">
+            <div class="col-4" data-price="40.00" data-popularity="10" data-product-type="skirt-dress">
             <img src="~/lib/photos/sustainability/untitled design (14).png" />
             <h4>Denim Mini Skirt</h4>
                 <a href="bag.html" class="cart-icon">
@@ -124,7 +174,7 @@
                 </a>
             <p>$40.00</p>
         </div>
-            <div class="col-4" data-price="50.00" data-popularity="3">
+            <div class="col-4" data-price="50.00" data-popularity="3" data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (13).png" />
             <h4>Lightwash Straight leg jeans</h4>
                 <a href="bag.html" class="cart-icon">
@@ -133,7 +183,7 @@
             <p>$50.00</p>
         </div>
 
-            <div class="col-4" data-price="20.00" data-popularity="5">
+            <div class="col-4" data-price="20.00" data-popularity="5" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (15).png" />
                 <h4>Floral Crochet Top</h4>
                 <a href="bag.html" class="cart-icon">
@@ -141,7 +191,7 @@
                 </a>
             <p>$20.00</p>
         </div>
-            <div class="col-4" data-price="55.00" data-popularity="7">
+            <div class="col-4" data-price="55.00" data-popularity="7" data-product-type="skirt-dress">
             <img src="~/lib/photos/sustainability/untitled design (16).png" />
             <h4>Denim Midi Skirt</h4>
                 <a href="bag.html" class="cart-icon">
@@ -149,7 +199,7 @@
                 </a>
             <p>$55.00</p>
         </div>
-            <div class="col-4" data-price="60.00" data-popularity="2">
+            <div class="col-4" data-price="60.00" data-popularity="2"data-product-type="jackets">
             <img src="~/lib/photos/sustainability/untitled design (17).png" />
             <h4>Cropped Detailing Jacket</h4>
                 <a href="bag.html" class="cart-icon">
@@ -157,7 +207,7 @@
                 </a>
             <p>$60.00</p>
         </div>
-            <div class="col-4" data-price="50.00" data-popularity="6">
+            <div class="col-4" data-price="50.00" data-popularity="6"data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (18).png" />
             <h4>Blue Mom Jeans</h4>
                 <a href="bag.html" class="cart-icon">
@@ -165,7 +215,7 @@
                 </a>
             <p>$50.00</p>
         </div>
-            <div class="col-4" data-price="20.00" data-popularity="6">
+            <div class="col-4" data-price="20.00" data-popularity="6" data-product-type="knit">
             <img src="~/lib/photos/sustainability/untitled design (19).png" />
             <h4>Oversized Grey Cardigan</h4>
                 <a href="bag.html" class="cart-icon">
@@ -174,7 +224,7 @@
             <p>$20.00</p>
         </div>
 
-            <div class="col-4" data-price="23.00" data-popularity="7">
+            <div class="col-4" data-price="23.00" data-popularity="7" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (21).png" />
             <h4>Black Bodysuit</h4>
                 <a href="bag.html" class="cart-icon">
@@ -182,7 +232,8 @@
                 </a>
             <p>$23.00</p>
         </div>
-            <div class="col-4" data-price="40.00" data-popularity="4">
+            <div class="col-4" data-price="40.00" data-popularity="4" data-product-type="bottoms">
+                
             <img src="~/lib/photos/sustainability/untitled design (22).png" />
             <h4>Wide Leg Pants</h4>
                 <a href="bag.html" class="cart-icon">
@@ -190,7 +241,7 @@
                 </a>
             <p>$40.00</p>
         </div>
-            <div class="col-4" data-price="10.00" data-popularity="5">
+            <div class="col-4" data-price="10.00" data-popularity="5" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (23).png" />
             <h4>Black Cropped Tank</h4>
                 <a href="bag.html" class="cart-icon">
@@ -198,7 +249,7 @@
                 </a>
             <p>$10.00</p>
         </div>
-            <div class="col-4" data-price="30.00" data-popularity="1">
+            <div class="col-4" data-price="30.00" data-popularity="1" data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (24).png" />
             <h4>Copper Pants</h4>
                 <a href="bag.html" class="cart-icon">
@@ -206,7 +257,7 @@
                 </a>
             <p>$30.00</p>
         </div>
-            <div class="col-4" data-price="30.00" data-popularity="5">
+            <div class="col-4" data-price="30.00" data-popularity="5" data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (25).png" />
             <h4>Leather Pants</h4>
                 <a href="bag.html" class="cart-icon">
@@ -214,7 +265,7 @@
                 </a>
             <p>$30.00</p>
         </div>
-            <div class="col-4" data-price="27.00" data-popularity="9">
+            <div class="col-4" data-price="27.00" data-popularity="9" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (26).png" />
             <h4>Black Corset Top</h4>
                 <a href="bag.html" class="cart-icon">
@@ -223,7 +274,7 @@
             <p>$27.00</p>
         </div>
 
-            <div class="col-4" data-price="45.00" data-popularity="6">
+            <div class="col-4" data-price="45.00" data-popularity="6" data-product-type="knit">
             <img src="~/lib/photos/sustainability/untitled design (28).png" />
             <h4>Brown Sweater</h4>
                 <a href="bag.html" class="cart-icon">
@@ -231,7 +282,7 @@
                 </a>
             <p>$45.00</p>
         </div>
-            <div class="col-4" data-price="48.00" data-popularity="2">
+            <div class="col-4" data-price="48.00" data-popularity="2" data-product-type="bottoms">
             <img src="~/lib/photos/sustainability/untitled design (29).png" />
             <h4>White Work Pants</h4>
                 <a href="bag.html" class="cart-icon">
@@ -239,7 +290,7 @@
                 </a>
             <p>$48.00</p>
         </div>
-            <div class="col-4" data-price="10.00" data-popularity="4">
+            <div class="col-4" data-price="10.00" data-popularity="4" data-product-type="top">
             <img src="~/lib/photos/sustainability/untitled design (30).png" />
             <h4>Coral Tank</h4>
                 <a href="bag.html" class="cart-icon">
@@ -247,7 +298,7 @@
                 </a>
             <p>$10.00</p>
         </div>
-            <div class="col-4" data-price="35.00" data-popularity="3">
+            <div class="col-4" data-price="35.00" data-popularity="3" data-product-type="knit">
             <img src="~/lib/photos/sustainability/untitled design (31).png" />
             <h4>Blue Knit Cardigan</h4>
                 <a href="bag.html" class="cart-icon">
@@ -255,7 +306,7 @@
                 </a>
             <p>$35.00</p>
         </div>
-            <div class="col-4" data-price="25.00" data-popularity="6">
+            <div class="col-4" data-price="25.00" data-popularity="6" data-product-type="tops">
             <img src="~/lib/photos/sustainability/untitled design (32).png" />
             <h4>Long Sleeve Grey Top</h4>
                 <a href="bag.html" class="cart-icon">
@@ -263,7 +314,7 @@
                 </a>
             <p>$25.00</p>
         </div>
-            <div class="col-4" data-price="45.00" data-popularity="7">
+            <div class="col-4" data-price="45.00" data-popularity="7" data-product-type="skirt-dress">
             <img src="~/lib/photos/sustainability/untitled design (34).png" />
             <h4>White Mini Skirt</h4>
                 <a href="bag.html" class="cart-icon">
@@ -303,7 +354,7 @@
             let currentPage = 1;
             let totalPages = Math.ceil(clothingItems.length / itemsPerPage);
 
-            function showItems(page) {
+            function showItems(page, filteredItems) {
                 clothingItemsContainer.innerHTML = ""; // Clear the container
                 const startIndex = (page - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
@@ -389,6 +440,33 @@
                    
                 });
             });
+
+            //FILTER PRODUCTS//
+
+        // Select the filter element
+        const productFilter = document.getElementById("product-filter");
+
+        // Add an event listener to handle filtering
+        productFilter.addEventListener("change", () => {
+            const selectedProductType = productFilter.value;
+
+            // Filter clothingItems based on the selected product type
+            const filteredItems = clothingItems.filter((item) => {
+                const productType = item.getAttribute("data-product-type");
+
+                // Display all items if "All Products" is selected
+                if (selectedProductType === "all") {
+                    return true;
+                }
+
+                // Otherwise, filter based on the selected product type
+                return productType === selectedProductType;
+            });
+
+            // Update the displayed items with the filtered items
+            showItems(currentPage, filteredItems);
+        });
+
         </script>
 
 

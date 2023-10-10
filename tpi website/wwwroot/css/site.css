@@ -84,7 +84,7 @@ input[type=submit] {
         transform: translateY(-7px);
     }
 
-/* Second-hand page*/
+/* Second-hand page and sustainability*/ 
 .row-2{
     justify-content: space-between;
     margin: 100px auto 50px;
@@ -132,9 +132,17 @@ select:focus {
     color: white; /* Text color for the selected page */
 }
 
+/* sort by and filter products styling */
+
+
+
+
+
+    /*carousel home page*/
+
 
 .container-fluid {
-    background: #f1dec9; 
+    background: #f1dec9;
     height: 60px;
 }
 
