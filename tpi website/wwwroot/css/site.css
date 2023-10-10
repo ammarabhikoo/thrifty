@@ -100,24 +100,38 @@ select:focus {
     outline: none;
 }
 
-.page-btn {
-    margin: 0 auto 80px;
+
+.pagination {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
 }
 
-    .page-btn span {
+    .pagination .page {
         display: inline-block;
         border: 1px solid #cdb49a;
-        margin-left: 10px;
+        margin-right: 10px; /* Adjust margin as needed */
         width: 40px;
         height: 40px;
         text-align: center;
         line-height: 40px;
         cursor: pointer;
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
     }
 
-        .page-btn span:hover {
-            background: #cdb49a;
+        .pagination .page:last-child {
+            margin-right: 0; /* Remove right margin for the last page */
         }
+
+        .pagination .page:hover {
+            background: #cdb49a;
+            color: white; /* Change text color on hover */
+        }
+
+.selected-page {
+    background-color: #cdb49a; /* Background color for the selected page */
+    color: white; /* Text color for the selected page */
+}
+
 
 .container-fluid {
     background: #f1dec9; 
