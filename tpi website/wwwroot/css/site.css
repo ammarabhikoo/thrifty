@@ -410,6 +410,7 @@ body {
 .containerf {
     max-width: 1170px;
     margin: auto;
+    position: relative;
 }
 
 .rowf {
@@ -424,6 +425,8 @@ ul {
 .footer {
     background-color: #f1dec9;
     padding: 70px 0;
+    position:relative;
+   
 }
 
 .footer-col {
