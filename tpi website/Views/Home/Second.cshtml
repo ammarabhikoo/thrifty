@@ -2,39 +2,78 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<style>
-                h2 {
-                    font-family: "Cambria", sans-serif;
-                    /* Additional styling if needed */
-                    font weight: 100;
-                }
-            </style>
-
-
-
 
 
 <body>
+    <style>
+        .container {
+            text-align: left;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .label-column {
+            flex: 1; /* Labels take up equal space */
+            text-align: left;
+        }
+
+        .select-column {
+            flex: 2; /* Selects take up more space */
+            text-align: right;
+        }
+
+        select {
+            width: 250px;
+        }
+    </style>
+
     <div class="container">
         <div class="row row-2">
             <h2>All Second-Hand Products</h2>
         </div>
 
-        <div class="row row-2">
-            <select id="sorting-select">
-                <option value="default">Default Sorting</option>
-                <option value="low-to-high">Sort by Price Low to High</option>
-                <option value="high-to-low">Sort by Price High to Low</option>
-                <option value="quality">Sort by Star Quality Rating</option>
-            </select>
+        <div class="row">
+            <div class="label-column">
+                <label for="sorting-select">Sort By:</label>
+            </div>
+            <div class="select-column">
+                <select id="sorting-select">
+                    <option value="default">Default</option>
+                    <option value="low-to-high">Price Low to High</option>
+                    <option value="high-to-low">Price High to Low</option>
+                    <option value="quality">Sort by Star Quality Rating</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label-column">
+                <label for="product-filter">Filter by Product Type:</label>
+            </div>
+            <div class="select-column">
+                <select id="product-filter">
+                    <option value="all">All Products</option>
+                    <option value="tops">Tops</option>
+                    <option value="bottoms">Bottoms</option>
+                    <option value="skirt-dress">Skirts / Dresses</option>
+                    <option value="jackets">Jackets</option>
+                    <option value="knit">Knitwear / Sweats</option>
+                    <option value="accessory">Shoes/ Accessories</option>
+                </select>
+            </div>
         </div>
     </div>
 
-    
+    <hr />
 
         <div class="small-container">
     <div class="row">
-            <div class="col-4" data-price="30.00" data-quality="4.5" >
+            <div class="col-4" data-price="30.00" data-quality="4.5" data-product-type="knit">
             <img src="~/lib/photos/second hand photos/hm sweater.png" />
             <h4>White Zip Sweater</h4>
             <div class="rating">
@@ -49,7 +88,7 @@
                 </a>
             <p>$30.00</p>
         </div>
-            <div class="col-4" data-price="130.00"  data-quality="4">
+            <div class="col-4" data-price="130.00" data-quality="4" data-product-type="accessory">
             <img src="~/lib/photos/second hand photos/sh-550s.png" />
             <h4>White/Grey New Balance 550</h4>
             <div class="rating">
@@ -63,7 +102,7 @@
                 </a>
             <p>$130.00</p>
         </div>
-            <div class="col-4" data-price="10.00" data-quality="3">
+            <div class="col-4" data-price="10.00" data-quality="3" data-product-type="tops">
             <img src="~/lib/photos/second hand photos/brown top.png" />
             <h4>Light Brown Top</h4>
             <div class="rating">
@@ -77,7 +116,7 @@
                 </a>
             <p>$10.00</p>
         </div>
-            <div class="col-4" data-price="40.00"  data-quality="5">
+            <div class="col-4" data-price="40.00" data-quality="5" data-product-type="knit">
             <img src="~/lib/photos/second hand photos/reclamied vintage.png" />
            <h4>Reclaimed Vintage Sweatshirt</h4>
             <div class="rating">
@@ -92,7 +131,7 @@
                 </a>
             <p>$40.00</p>
         </div>
-            <div class="col-4" data-price="20.00" data-quality="4.5">
+            <div class="col-4" data-price="20.00" data-quality="4.5" data-product-type="skirt-dress">
             <img src="~/lib/photos/second hand photos/skirt.png" />
             <h4>White Tired Maxi Skirt</h4>
             <div class="rating">
@@ -107,7 +146,7 @@
                 </a>
             <p>$20.00</p>
         </div>
-            <div class="col-4" data-price="7.00" data-quality="4">
+            <div class="col-4" data-price="7.00" data-quality="4" data-product-type="tops">
             <img src="~/lib/photos/second hand photos/tank.png" />
             <h4>Black Tank</h4>
             <div class="rating">
@@ -118,7 +157,7 @@
             </div>
             <p>$7.00</p>
         </div>
-            <div class="col-4" data-price="20.00" data-quality="5">
+            <div class="col-4" data-price="20.00" data-quality="5" data-product-type="jackets">
             <img src="~/lib/photos/second hand photos/divided jacket.png" />
             <h4>Black Lightweight Jacket</h4>
             <div class="rating">
@@ -133,7 +172,7 @@
                 </a>
             <p>$20.00</p>
         </div>
-            <div class="col-4" data-price="25.00" data-quality="5">
+            <div class="col-4" data-price="25.00" data-quality="5" data-product-type="knit">
             <img src="~/lib/photos/second hand photos/sh-sweater1.png" />
             <h4>White V-Neck Sweater</h4>
             <div class="rating">
@@ -148,7 +187,7 @@
                 </a>
             <p>$25.00</p>
         </div>
-            <div class="col-4" data-price="35.00"  data-quality="3.5">
+            <div class="col-4" data-price="35.00"  data-quality="3.5" data-product-type="accessory">
             <img src="~/lib/photos/second hand photos/sh-bag.png" />
             <h4>Black Shoulder Bag</h4>
             <div class="rating">
@@ -162,7 +201,7 @@
                 </a>
             <p>$35.00</p>
         </div>
-            <div class="col-4" data-price="35.00" data-quality="4">
+            <div class="col-4" data-price="35.00" data-quality="4"data-product-type="knit">
             <img src="~/lib/photos/second hand photos/subtitled original.png" />
             <h4>Brown Subtitled Original Sweatshirt</h4>
             <div class="rating">
@@ -176,8 +215,8 @@
                 </a>
             <p>$35.00</p>
         </div>
-            <div class="col-4" data-price="15.00" data-quality="3">
-            <img src="~/lib/photos/second hand photos/sh-sweater1.png" />
+            <div class="col-4" data-price="15.00" data-quality="3" data-product-type="knit">
+                <img src="~/lib/photos/crochet.jpg" />
             <h4>Crocheted Sweater</h4>
             <div class="rating">
                 <i class="fa fa-star"></i>
@@ -190,7 +229,7 @@
                 </a>
             <p>$15.00</p>
         </div>
-            <div class="col-4" data-price="5.00" data-quality="5">
+            <div class="col-4" data-price="5.00" data-quality="5" data-product-type="tops">
             <img src="~/lib/photos/second hand photos/dark grey top.png" />
             <h4>Dark Grey Tee</h4>
             <div class="rating">
@@ -205,7 +244,7 @@
                 </a>
             <p>$5.00</p>
         </div>
-            <div class="col-4" data-price="70.00" data-quality="5">
+            <div class="col-4" data-price="70.00" data-quality="5" data-product-type="jackets">
             <img src="~/lib/photos/second hand photos/sh-puffer.png" />
             <h4>Black Puffer Jacket</h4>
             <div class="rating">
@@ -220,7 +259,7 @@
                 </a>
             <p>$70.00</p>
         </div>
-            <div class="col-4" data-price="30.00" data-quality="4">
+            <div class="col-4" data-price="30.00" data-quality="4" data-product-type="accessory">
             <img src="~/lib/photos/second hand photos/sh-heels.png" />
             <h4>Black Slip-On Heels</h4>
             <div class="rating">
@@ -234,7 +273,7 @@
                 </a>
             <p>$30.00</p>
         </div>
-            <div class="col-4" data-price="30.00"  data-quality="3">
+            <div class="col-4" data-price="30.00" data-quality="3" data-product-type="bottoms">
             <img src="~/lib/photos/second hand photos/dark blue jeans.png" />
             <h4>Dark Blue Wide Leg Jeans</h4>
             <div class="rating">
@@ -248,7 +287,7 @@
                 </a>
             <p>$30.00</p>
         </div>
-            <div class="col-4" data-price="20.00"  data-quality="5">
+            <div class="col-4" data-price="20.00" data-quality="5" data-product-type="accessory">
             <img src="~/lib/photos/second hand photos/loafers.png" />
             <h4>Black Loafers</h4>
             <div class="rating">
@@ -263,7 +302,7 @@
                 </a>
             <p>$20.00</p>
         </div>
-            <div class="col-4" data-price="50.00"  data-quality="5">
+            <div class="col-4" data-price="50.00"  data-quality="5" data-product-type="jackets">
             <img src="~/lib/photos/second hand photos/jacket.png" />
             <h4>Black Teddy Jacket</h4>
             <div class="rating">
@@ -280,7 +319,7 @@
                 </a>
             <p>$50.00</p>
         </div>
-            <div class="col-4" data-price="30.00" data-quality="4">
+            <div class="col-4" data-price="30.00" data-quality="4" data-product-type="knit">
             <img src="~/lib/photos/second hand photos/glassons sweater.png" />
             <h4>Sweater</h4>
             <div class="rating">
@@ -295,7 +334,7 @@
 
             <p>$30.00</p>
         </div>
-            <div class="col-4" data-price="20.00" data-quality="3">
+            <div class="col-4" data-price="20.00" data-quality="3" data-product-type="bottoms">
             <img src="~/lib/photos/second hand photos/light blue jeans.png" />
             <h4>Light Blue Jeans</h4>
             <div class="rating">
@@ -309,7 +348,7 @@
                 </a>
             <p>$20.00</p>
         </div>
-            <div class="col-4" data-price="7.00" data-quality="3">
+            <div class="col-4" data-price="7.00" data-quality="3" data-product-type="tops">
             <img src="~/lib/photos/second hand photos/white top.png"/>
             <h4>White Tee</h4>
             <div class="rating">
@@ -322,7 +361,7 @@
                 </a>
             <p>$7.00</p>
         </div>
-            <div class="col-4" data-price="90.00" data-quality="4">
+            <div class="col-4" data-price="90.00" data-quality="4" data-product-type="accessory">
             <img src="~/lib/photos/second hand photos/sh-shoes.png" />
             <h4>New Balance Shoes</h4>
             <div class="rating">
@@ -337,7 +376,7 @@
                 </a>
             <p>$90.00</p>
         </div>
-            <div class="col-4" data-price="10.00"  data-quality="4">
+            <div class="col-4" data-price="10.00"  data-quality="4" data-product-type="tops">
             <img src="~/lib/photos/second hand photos/green top.png" />
             <h4>Long Sleeve Green Top</h4>
             <div class="rating">
@@ -352,7 +391,7 @@
                 </a>
             <p>$10.00</p>
         </div>
-            <div class="col-4" data-price="10.00"  data-quality="4.5">
+            <div class="col-4" data-price="10.00"  data-quality="4.5" data-product-type="accessory">
             <img src="~/lib/photos/second hand photos/sh-cap.png" />
             <h4>Black Cap</h4>
             <div class="rating">
@@ -367,7 +406,7 @@
                 </a>
             <p>$10.00</p>
         </div>
-            <div class="col-4" data-price="5.00"  data-quality="3">
+            <div class="col-4" data-price="5.00"  data-quality="3"data-product-type="tops">
             <img src="~/lib/photos/second hand photos/black top.png" />
             <h4>Black Graphic Tee</h4>
             <div class="rating">
@@ -395,106 +434,126 @@
         
     </div>
 
-
-
-
-  
     <script>
         // JAVASCRIPT CODE FOR PAGINATION AND SORTING FUNCTIONALITIES //
 
         document.addEventListener("DOMContentLoaded", function () {
             const selectElement = document.getElementById("sorting-select");
+            const productFilter = document.getElementById("product-filter");
             const clothingItemsContainer = document.querySelector(".small-container .row");
             let clothingItems = Array.from(document.querySelectorAll(".col-4"));
             let originalClothingItems = [...clothingItems];
 
-            //PAGINATION//
-
+            // Pagination code
             const itemsPerPage = 8;
             let currentPage = 1;
             let totalPages = Math.ceil(clothingItems.length / itemsPerPage);
 
-            function showItems(page) {
-                clothingItemsContainer.innerHTML = ""; // Clear the container
+            function showItems(page, items) {
+                clothingItemsContainer.innerHTML = "";
                 const startIndex = (page - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
-                const itemsToShow = clothingItems.slice(startIndex, endIndex);
+                const itemsToShow = items.slice(startIndex, endIndex);
 
                 itemsToShow.forEach((item) => {
                     clothingItemsContainer.appendChild(item);
                 });
             }
 
-            //  page navigation
-            const pagination = document.querySelector(".pagination");
+            function updatePagination() {
+                const pagination = document.querySelector(".pagination");
+                pagination.innerHTML = "";
 
-            pagination.addEventListener("click", (event) => {
-                if (event.target.classList.contains("page"))
-                    currentPage = parseInt(event.target.getAttribute("data-page"));
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageElement = document.createElement("span");
+                    pageElement.classList.add("page");
+                    pageElement.textContent = i;
+                    pageElement.setAttribute("data-page", i);
 
-                // Remove the "selected" class from all pages
-                document.querySelectorAll(".page").forEach((page) => {
-                    page.classList.remove("selected");
-                });
+                    if (i === currentPage) {
+                        pageElement.classList.add("selected");
+                    }
 
-                // Add the "selected" class to the clicked page
-                event.target.classList.add("selected");
+                    pagination.appendChild(pageElement);
+                }
+            }
 
-                showItems(currentPage);
-
-                // Scroll to the top of the container
-                clothingItemsContainer.scrollIntoView({
-                    behavior: "auto",
-                });
-            });
-
-            //SORTING//
-
-            selectElement.addEventListener("change", function () {
+            function sortAndFilterProducts() {
                 const selectedOption = selectElement.value;
+                const selectedProductType = productFilter.value;
 
-                // Remove all clothing items from the container
-                clothingItemsContainer.innerHTML = "";
+                const filteredItems = originalClothingItems.filter((item) => {
+                    const productType = item.getAttribute("data-product-type");
+                    if (selectedProductType === "all") {
+                        return true; // Show all products
+                    }
+                    return productType === selectedProductType;
+                });
 
                 if (selectedOption === "high-to-low") {
-                    // Sort by price high to low
-                    clothingItems.sort((a, b) => {
+                    filteredItems.sort((a, b) => {
                         const priceA = parseFloat(a.getAttribute("data-price"));
                         const priceB = parseFloat(b.getAttribute("data-price"));
                         return priceB - priceA;
                     });
-                }
-                else if (selectedOption === "low-to-high") {
-                    // Sort by price low to high
-                    clothingItems.sort((a, b) => {
+                } else if (selectedOption === "low-to-high") {
+                    filteredItems.sort((a, b) => {
                         const priceA = parseFloat(a.getAttribute("data-price"));
                         const priceB = parseFloat(b.getAttribute("data-price"));
                         return priceA - priceB;
                     });
-                }
-                else if (selectedOption === "quality") {
+                } else if (selectedOption === "quality") {
                     // Sort by quality (higher data-quality values are better)
-                    clothingItems.sort((a, b) => {
+                    filteredItems.sort((a, b) => {
                         const qualityA = parseFloat(a.getAttribute("data-quality"));
                         const qualityB = parseFloat(b.getAttribute("data-quality"));
                         return qualityB - qualityA;
                     });
-                }
-                else if (selectedOption === "default") {
-                    // Reset to default sorting
-                    clothingItems = originalClothingItems.slice();
+
                 }
 
-                // Update the total number of pages after sorting
-                totalPages = Math.ceil(clothingItems.length / itemsPerPage);
-                currentPage = 1; // Reset to the first page
-                showItems(currentPage);
+                totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+                currentPage = 1;
+
+                
+                showItems(currentPage, filteredItems);
+                updatePagination();
+            }
+
+            // Event listeners for sorting, filtering, and pagination
+            selectElement.addEventListener("change", sortAndFilterProducts);
+            productFilter.addEventListener("change", sortAndFilterProducts);
+
+            const pagination = document.querySelector(".pagination");
+            pagination.addEventListener("click", (event) => {
+                if (event.target.classList.contains("page")) {
+                    currentPage = parseInt(event.target.getAttribute("data-page"));
+
+                    document.querySelectorAll(".page").forEach((page) => {
+                        page.classList.remove("selected");
+                    });
+
+                    event.target.classList.add("selected");
+
+                    showItems(currentPage, originalClothingItems);
+
+                    clothingItemsContainer.scrollIntoView({
+                        behavior: "auto",
+                    });
+                }
             });
 
-            // Show the first page initially
-            showItems(currentPage);
+            // Initial setup
+            updatePagination();
+            showItems(currentPage, clothingItems);
         });
+
+
     </script>
+
+
+
+
 
 
 
