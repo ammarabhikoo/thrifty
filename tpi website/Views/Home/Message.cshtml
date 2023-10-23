@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="containerR">
+   <body>
+
+    <div class="returns">
+
+            <style>
+                h1 {
+                    font-family: "Cambria", sans-serif;
+                    /* Additional styling if needed */
+                    font weight: 100;
+                }
+            </style>
+
+        <h1>Send Us a Message</h1>
+
+        <hr /> 
+
+         
+            <form action="https://formspree.io/f/xoqoreaz"
+                  method="POST"
+            class="form2">
+                <label>
+                    Your name:
+                    <input type="text" name="name">
+                </label>
+                <label>
+                    Your email:
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Subject:
+                    <input type="text" name="subject">
+                </label>
+                <label>
+                    Your message:
+                    <textarea name="message"></textarea>
+                </label>
+                <!-- your other form fields go here -->
+                <button type="submit">Send</button>
+            </form>
+            
+
+        </div>
+    </body>
+     
+</div>

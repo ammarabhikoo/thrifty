@@ -62,6 +62,10 @@ namespace tpi_website.Controllers
         {
             return View();
         }
+        public IActionResult Message()
+        {
+            return View();
+        }
 
         public IActionResult Subscribe()
         {

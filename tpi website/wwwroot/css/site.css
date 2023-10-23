@@ -18,7 +18,7 @@ body {
 }
 
 /* Style the form element with a border around it */
-form {
+form.form1 {
     border: 4px solid #f1f1f1;
 }
 
@@ -29,7 +29,7 @@ form {
 }
 
 /* Style the input elements and the submit button */
-input[type=text], input[type=submit] {
+form.form1 input[type="text"], form.form1 input[type="submit"] {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -38,17 +38,17 @@ input[type=text], input[type=submit] {
     box-sizing: border-box;
 }
 
-
 /* Style the submit button */
-input[type=submit] {
+form.form1 input[type="submit"] {
     background-color: #acc1cf;
     color: white;
     border: none;
 }
 
-    input[type=submit]:hover {
+    form.form1 input[type="submit"]:hover {
         opacity: 0.8;
     }
+
 
     .categories{
         margin: 70px 0;
@@ -684,3 +684,50 @@ body {
     cursor: pointer;
    margin-top: 10px;
 }
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Light grey background */
+    margin: 0;
+    padding: 0;
+}
+
+form.form2 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    form.form2 label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    form.form2 input[type="text"],
+    form.form2 input[type="email"],
+    form.form2 textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc; /* Light grey border */
+        border-radius: 4px;
+    }
+
+    form.form2 button[type="submit"] {
+        background-color: #000; /* Black button background */
+        color: #fff; /* White button text */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        form.form2 button[type="submit"]:hover {
+            background-color: #333; /* Darker grey on hover */
+        }
