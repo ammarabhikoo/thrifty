@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static tpi_website.Controllers.OrdersController;
+
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace tpi_website.Models
 {
@@ -33,7 +32,7 @@ namespace tpi_website.Models
 
         [Display(Name = "Product Names")]
         [Required(ErrorMessage = "Product Names are required.")]
-        public List<string> ProductNames { get; set; }
+        public string ProductNames { get; set; }
 
         public Order()
         {

@@ -58,10 +58,6 @@ namespace tpi_website.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            // You need to fetch product names from the database to populate the dropdown.
-            var productNames = await _context.Products.Select(p => p.ProductName).ToListAsync();
-            ViewBag.ProductNames = new SelectList(productNames);
-
             return View();
         }
 
