@@ -66,7 +66,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FullName,Ship_date,Status,To_street,To_city,To_zip,ProductName")] Order order)
+        public async Task<IActionResult> Create([Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateC([Bind("Id,FullName,Ship_date,Status,To_street,To_city,To_zip,ProductName")] Order order)
+        public async Task<IActionResult> CreateC([Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -123,7 +123,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Ship_date,Status,To_street,To_city,To_zip,ProductName")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
         {
             if (id != order.Id)
             {
