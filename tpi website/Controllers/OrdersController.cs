@@ -14,7 +14,7 @@ using tpi_website.Models;
 
 namespace tpi_website.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    
     public class OrdersController : Controller
 
     {
@@ -72,9 +72,34 @@ namespace tpi_website.Controllers
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(OrderReceived));
             }
             return View(order);
+        }
+
+        public IActionResult CreateC()
+        {
+            return View();
+        }
+
+        // POST: Orders/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateC([Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(OrderReceived));
+            }
+            return View(order);
+        }
+        public IActionResult OrderReceived()
+        {
+            return View();
         }
 
         // GET: Orders/Edit/5
@@ -171,3 +196,4 @@ namespace tpi_website.Controllers
         }
     }
 }
+
