@@ -11,10 +11,10 @@ namespace tpi_website.Models
         public int Id { get; set; }
 
 
-        [Display(Name = "Full Name")]
+        [Display(Name = "Customer ID")]
         [Required(ErrorMessage = "Customer Name is required.")]
         
-        public string Customer_ID { get; set; }
+        public int Customer_ID { get; set; }
 
 
         [Display(Name = "Order Date")]
@@ -34,10 +34,10 @@ namespace tpi_website.Models
         [RegularExpression(@"^\d{4}$", ErrorMessage = "ZIP code must consist of exactly four digits.")]
         public int To_zip { get; set; }
 
-        [Display(Name = "Product Names")]
+        [Display(Name = "Product ID")]
         [Required(ErrorMessage = "Product is required.")]
         
-        public string Product_ID { get; set; }
+        public int Product_ID { get; set; }
 
         public Order()
         {
