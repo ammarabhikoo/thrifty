@@ -10,87 +10,87 @@ using tpi_website.Models;
 
 namespace tpi_website.Controllers
 {
-    public class PaymentsController : Controller
+    public class PurchasesController : Controller
     {
         private readonly tpi_websiteContext _context;
 
-        public PaymentsController(tpi_websiteContext context)
+        public PurchasesController(tpi_websiteContext context)
         {
             _context = context;
         }
 
-        // GET: Payments
+        // GET: Purchases
         public async Task<IActionResult> Index()
         {
-              return _context.Payment != null ? 
-                          View(await _context.Payment.ToListAsync()) :
-                          Problem("Entity set 'tpi_websiteContext.Payment'  is null.");
+              return _context.Purchases != null ? 
+                          View(await _context.Purchases.ToListAsync()) :
+                          Problem("Entity set 'tpi_websiteContext.Purchases'  is null.");
         }
 
-        // GET: Payments/Details/5
+        // GET: Purchases/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Payment == null)
+            if (id == null || _context.Purchases == null)
             {
                 return NotFound();
             }
 
-            var payment = await _context.Payment
+            var purchases = await _context.Purchases
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (payment == null)
+            if (purchases == null)
             {
                 return NotFound();
             }
 
-            return View(payment);
+            return View(purchases);
         }
 
-        // GET: Payments/Create
+        // GET: Purchases/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Payments/Create
+        // POST: Purchases/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CustomerID,OrderTime,OrderStatus")] Payment payment)
+        public async Task<IActionResult> Create([Bind("Id,FullName,To_street,To_city,To_zip,OrderDate")] Purchases purchases)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(payment);
+                _context.Add(purchases);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(payment);
+            return View(purchases);
         }
 
-        // GET: Payments/Edit/5
+        // GET: Purchases/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Payment == null)
+            if (id == null || _context.Purchases == null)
             {
                 return NotFound();
             }
 
-            var payment = await _context.Payment.FindAsync(id);
-            if (payment == null)
+            var purchases = await _context.Purchases.FindAsync(id);
+            if (purchases == null)
             {
                 return NotFound();
             }
-            return View(payment);
+            return View(purchases);
         }
 
-        // POST: Payments/Edit/5
+        // POST: Purchases/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CustomerID,OrderTime,OrderStatus")] Payment payment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,To_street,To_city,To_zip,OrderDate")] Purchases purchases)
         {
-            if (id != payment.Id)
+            if (id != purchases.Id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace tpi_website.Controllers
             {
                 try
                 {
-                    _context.Update(payment);
+                    _context.Update(purchases);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PaymentExists(payment.Id))
+                    if (!PurchasesExists(purchases.Id))
                     {
                         return NotFound();
                     }
@@ -115,49 +115,49 @@ namespace tpi_website.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(payment);
+            return View(purchases);
         }
 
-        // GET: Payments/Delete/5
+        // GET: Purchases/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Payment == null)
+            if (id == null || _context.Purchases == null)
             {
                 return NotFound();
             }
 
-            var payment = await _context.Payment
+            var purchases = await _context.Purchases
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (payment == null)
+            if (purchases == null)
             {
                 return NotFound();
             }
 
-            return View(payment);
+            return View(purchases);
         }
 
-        // POST: Payments/Delete/5
+        // POST: Purchases/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Payment == null)
+            if (_context.Purchases == null)
             {
-                return Problem("Entity set 'tpi_websiteContext.Payment'  is null.");
+                return Problem("Entity set 'tpi_websiteContext.Purchases'  is null.");
             }
-            var payment = await _context.Payment.FindAsync(id);
-            if (payment != null)
+            var purchases = await _context.Purchases.FindAsync(id);
+            if (purchases != null)
             {
-                _context.Payment.Remove(payment);
+                _context.Purchases.Remove(purchases);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PaymentExists(int id)
+        private bool PurchasesExists(int id)
         {
-          return (_context.Payment?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Purchases?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

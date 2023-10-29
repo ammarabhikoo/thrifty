@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using tpi_website.Data;
 using tpi_website.Models;
 
-
 namespace tpi_website.Controllers
 {
-    
     public class OrdersController : Controller
-
     {
         private readonly tpi_websiteContext _context;
 
@@ -25,12 +19,8 @@ namespace tpi_website.Controllers
             _context = context;
         }
 
-       
-
-
-
-    // GET: Orders
-    public async Task<IActionResult> Index()
+        // GET: Orders
+        public async Task<IActionResult> Index()
         {
               return _context.Order != null ? 
                           View(await _context.Order.ToListAsync()) :
@@ -66,40 +56,15 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
+        public async Task<IActionResult> Create([Bind("Id,FullName,To_street,To_city,To_zip,OrderDate")] Order order)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(OrderReceived));
+                return RedirectToAction(nameof(Index));
             }
             return View(order);
-        }
-
-        public IActionResult CreateC()
-        {
-            return View();
-        }
-
-        // POST: Orders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateC([Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(OrderReceived));
-            }
-            return View(order);
-        }
-        public IActionResult OrderReceived()
-        {
-            return View();
         }
 
         // GET: Orders/Edit/5
@@ -123,7 +88,7 @@ namespace tpi_website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Customer_ID,Ship_date,Status,To_street,To_city,To_zip,Product_ID")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,To_street,To_city,To_zip,OrderDate")] Order order)
         {
             if (id != order.Id)
             {
@@ -196,4 +161,3 @@ namespace tpi_website.Controllers
         }
     }
 }
-

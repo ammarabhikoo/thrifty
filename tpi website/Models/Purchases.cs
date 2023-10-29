@@ -6,7 +6,7 @@ using tpi_website.Areas.Identity.Data;
 
 namespace tpi_website.Models
 {
-    public class Order
+    public class Purchases
     {
         public int Id { get; set; }
 
@@ -28,8 +28,7 @@ namespace tpi_website.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime OrderDate { get; set; }
 
-
+        
 
     }
 }
-

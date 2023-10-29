@@ -67,6 +67,20 @@ namespace tpi_website.Areas.Identity.Pages.Account
    
         public class InputModel
         {
+            [Required]
+            [StringLength(50, ErrorMessage = "The first name field should have a maximum of 50 characters")]
+            [Display(Name = "Full Name")]
+            public string FullName { get; set; }
+
+
+            [Display(Name = "Phone Number")]
+            [Required(ErrorMessage = "Please enter a valid phone number")]
+            [RegularExpression("^[0-9]{10}$", ErrorMessage = "Invalid Moblie number")]
+            public string? PhoneNumber { get; set; }
+
+           
+            [Range(0, int.MaxValue, ErrorMessage = "Age must be a positive whole number.")]
+            public int Age { get; set; }
           
             [Required]
             [EmailAddress]
@@ -101,6 +115,11 @@ namespace tpi_website.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+
+
+                user.FullName = Input.FullName;
+                user.PhoneNumber = Input.PhoneNumber;
+                user.Age = Input.Age;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

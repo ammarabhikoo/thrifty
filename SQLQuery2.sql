@@ -1,3 +1,1 @@
-﻿ALTER TABLE [Order]
-ADD FOREIGN KEY (Customer_ID)
-REFERENCES [User](Id);
+﻿DELETE FROM __EFMigrationsHistory
