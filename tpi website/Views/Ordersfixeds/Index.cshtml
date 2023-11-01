@@ -1,10 +1,10 @@
-﻿@model IEnumerable<tpi_website.Models.Order>
+﻿@model IEnumerable<tpi_website.Models.Ordersfixed>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>All Orders</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -27,6 +27,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.OrderDate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -47,6 +50,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

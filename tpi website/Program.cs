@@ -67,6 +67,8 @@ using (var scope = app.Services.CreateScope())
         var user = new tpi_websiteUser();
         user.UserName = email;
         user.Email = email;
+        user.FullName = "Your Full Name";
+    
 
 
         await userManager.CreateAsync(user, password);
