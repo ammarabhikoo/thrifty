@@ -50,6 +50,10 @@ namespace tpi_website.Controllers
         {
             return View();
         }
+        public IActionResult Thanks()
+        {
+            return View();
+        }
 
         // POST: Ordersfixeds/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -62,7 +66,7 @@ namespace tpi_website.Controllers
             {
                 _context.Add(ordersfixed);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Thanks));
             }
             return View(ordersfixed);
         }
